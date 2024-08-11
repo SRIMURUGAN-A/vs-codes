@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo JavaScript in Body</h2>
+
+<p id="demo">A Paragraph</p>
+<p id ="demo2">demo2</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+<button type="button" onclick="new_function()">try for2</button>
+
+<script>
+  let ax = 2;
+  switch (ax){
+    case 1:
+      pass = "It is not = 3 but =1"
+      break ;
+      case 2:
+        pass = "it is not = 3 but =2"
+        break;
+        case 3:
+          pass = "it is = 3"
+          break;
+          default:
+            pass = "greater than 3";
+  }
+  function new_function(){
+    alert("welcome you click the button")
+    let a = Math.random()*30;
+    function ifoparator(a){
+      if (a<10){
+        return "value is less than 10";
+      }else if(a<20){
+        return "value is less than 20";
+      }else{
+        return "value is less than 30";
+      }
+    }
+    let result = ifoparator(a);
+    document.getElementById("demo2").innerHTML= "this is the examble of comparision : " +
+     result + " " + a + "</br>" + pass ;
+  }
+function person(name, height, age){
+  this.firstname=name;
+  this.firstheight=height;
+  this.firstage=age;
+}
+const person1= new person("sri", 147, 20);
+
+function myFunction() {
+  const person = {
+  firstname: "John",
+  lastname: "Doe",
+  age: 50,
+  eyecolor: "blue"
+};
+let mystring = JSON.stringify(person);
+let text  = "";
+for (let [key,value] of Object.entries(person)){
+  text += key +"="+ value + "</br>" ;
+}
+let header= "this is a header";
+let listvalue = ["js", "html", "css."];
+let header_output=`<h1> ${header} </h1><ul>`;
+for(const yaa of listvalue){
+  header_output += `<li> ${yaa} </li> `; 
+}
+header_output += `</ul>`;
+
+const fruits = ["bannas", "apple", "orange"] ;
+let t = " "; //"<ul>" ;
+  for (let i = 0 ; i < fruits.length; i++ ){
+    t += "<li>" + fruits[i] + "</li>" ;
+  }
+//t += "</ul>";
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+
+const numpers = [3,5,6,19,77];
+let over18 = numpers . filter(fun);
+function fun (value){
+  return value > 18;
+}
+
+
+document.getElementById("demo").innerHTML =  text + " " + person1 + " " + header_output + t + " " + over18;
+}
+//let text2 = text1.toUpperCase();
+/*let text="";
+for (let x in person){
+  text+= person[x] + "";
+};
+let padded = text.padStart(4,"x");*/
+  //const myArray = Object.values(person);
+  //document.getElementById("demo").innerHTML="THIS IS A CHANGED PARAGRAPH";
+  //document.getElementById("demo").innerHTML = "Paragraph changed.";
+  //window.alert("hi");
+  //window.print()
+  //document.write(4+5);
+  //return (this.firstName + " " + this.lastName).toUpperCase();
+
+</script>
+
+</body>
+</html>

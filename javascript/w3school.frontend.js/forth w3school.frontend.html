@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Tis is an the page of fourth html</h1>
+        <p id ="demo"></p>
+    <script>
+        // create an object
+        function person(first_name, second_name, age , lang){
+            this.first_name = first_name;
+            this . last_name = second_name;
+            this.age = age ;
+            this.lang =lang;
+        }
+
+        person1 = new person(sri, murugan, 20, tam);
+        person2 = new person(roger, sam, 20, tamil);
+        // create a an entries 
+        /*let a = [{name:"apple", quantity:300},
+                 {name:'orange', quantity:350},
+                 {name:'cherry', quantity : 500}];
+        
+        function mycallback({quantity}){
+            return  quantity > 300 ? "ok" : "low";
+        }
+
+        const resul = Object.groupBy(a , mycallback);*/
+
+
+        let x =null;
+        let y = "missing";
+        result = x ?? y 
+        let text = "5";
+        text = text.padStart(4,"0");
+        document.getElementById("demo").innerHTML = text +"/br"+ "the result is " + result + "/br" + person2.last_name;
+    </script>
+   </body>
+</html>

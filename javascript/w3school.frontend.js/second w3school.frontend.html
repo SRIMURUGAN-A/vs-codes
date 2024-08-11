@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <tittle>"second js"</tittle>
+    </head>
+    <body>
+        <h2>hi</h2>
+        <p id="demo">this is a paragraph</p>
+        <p id ="demo2">this is a another paragraph</p>
+        <button type ="button" onclick="newfunction()">click me</button>
+        <button type ="button" onclick="anotherfunction()">click me</button>
+    </body>
+    <script type="module">
+        //const obj = JSON.parse(text);
+        import {name, age} from "./dummy.js"
+        function anotherfunction(){
+            alert("button 2 is clicked")
+            document.getElementById("demo2").innerHTML = name +" "+age;
+        };
+        window.anotherfunction = anotherfunction;
+    </script>
+    <script>
+        //
+        //console.log used to print the result in debuger console
+        // debugger
+        let x = 15 * 5;
+        debugger;
+        document.getElementById("demo").innerHTML = x;
+        // class example
+        class Per{
+            constructor(name,gender){
+                this.name=name;
+                this.gender=gender;
+            }
+            age(){
+                const date = new Date();
+                const year = date.getFullYear();
+                return year;
+            }
+
+        }
+        const  myperson = new Per("sri", "male");
+        // use of this
+        const person ={
+            fname : "sri",
+            lname : "murugan",
+            fullname : function() {
+                return this.fname +" "+ this.lname;
+            }
+        }
+        // for loop
+        function newfunction(){
+            let value = " "
+            for (let i=0; i<20; i++ ){
+                value += "IS THERE EVERY ONE"+"<br>" ;
+            }
+            alert("button is clicked")
+            try{
+               lert("hi this an alert:")
+            }catch(err){
+               document.getElementById("demo").innerHTML = err + 
+               "<br>" + value + "<br>" +""+person.fullname() +" " + 
+               "<br>" + "He live in the year "+ myperson.age();
+            }
+    }
+    </script>
+</html>
