@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="city.css">
+    <title>City Selector</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>FD Rate Calculator</h2>
+        <div class="inputdiv">
+            <select id="input">
+                <option value="bengalur">Bangaluru</option>
+                <option value="chennai">Chennai</option>
+                <option value="tuty"> Tuty</option>
+                <option value="delhi">Delhi</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" onclick="select()">Result</button>
+        </div>
+        <div id="result">
+        </div>
+    </div>
+    <script>
+        function select(){
+            let input = document.getElementById("input")
+            const city = input.options[input.selectedIndex].value
+
+            let population =0, litracy=0, lang="";
+            
+            switch(city){
+                case "bengalur":
+                    population = 12400000;
+                    litracy = 374888;
+                    lang = "kanadam"
+                    break
+                
+                case "chennai" :
+                    population = 10000000;
+                    litracy =  8000000;
+                    lang = "tamil";
+                    break;
+
+                case "tuty" :
+                    population = 7000000;
+                    litracy =  4000000;
+                    lang = "tamil";
+                    break;
+
+                case "delhi" :
+                    population = 20000000;
+                    litracy =  10000000;
+                    lang = "hindi";
+                    break;
+            }
+
+            result = document.getElementById('result')
+            result.innerHTML = `The indian state you selected is ${city}. The total population is ${population} and litracy is ${litracy} and they speak ${lang}`
+        }
+    </script>
+</body>
+</html>

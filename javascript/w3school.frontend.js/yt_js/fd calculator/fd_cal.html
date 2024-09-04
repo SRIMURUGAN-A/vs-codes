@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fd_cal.css">
+    <title>FD Rate Calculator</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>FD Rate Calculator</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Enter months">
+        </div>
+        <div>
+            <button type="submit" onclick="fdRate()">Calculate</button>
+        </div>
+        <div id="result">
+        </div>
+    </div>
+    <script>
+      function fdRate() {
+        let month = (document.getElementById("input")).value
+        month = Number(month)
+        let rate =0
+
+        if (month<3){
+            rate = 5.5
+        }
+        else if (month>3 && month<6){
+            rate = 6.5
+        }
+        else if(month>6 && month<9){
+            rate = 7.5
+        }else{
+            rate=7
+        }
+
+
+        let resul =document.getElementById("result")
+        resul.innerHTML = "intrest rate is" + rate
+
+      }
+    </script>
+</body>
+</html>

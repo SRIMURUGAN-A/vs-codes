@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title > js 5th page</title>
+        <style>
+            h2{
+                color: blue;
+                text-align: center;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tis is an the page of fifth html</h1>
+        <p id ="demo"></p>
+        <h2 id="time"></h2>
+        <h1>this is a example of  API workers</h1>
+        <button onclick="worker_start()">Start</button>
+        <button onclick="worker_end()">End</button>
+        <h3 id="worker"></h3>
+    <script>
+        var x = 10;
+        document.getElementById("demo").innerHTML = x;
+
+        let w ;
+        function worker_start(){
+            if (typeof(w) == 'undefined'){
+                w = new Worker('worker.js');
+            }
+
+            w.onmessage = function(event){
+                document.getElementById("worker").innerHTML = event.data;
+            };
+        }
+
+        function worker_end(){
+            w.terminate();
+            w = undefined;
+        }
+    </script>
+    <script>
+        // call back example
+        const num = [-3, 3, -6, 6, -1, 0, -9];
+        result = removenegative(num, mycallback);
+        document.getElementById("demo").innerHTML = "<br>Filtered numbers: " + result;
+        function mycallback(x){
+            return x >= 0;
+        }
+        function removenegative(num, mycallback){
+            let resul = [];
+            for (let n of num){
+                if (mycallback(n)){
+                    resul.push(n);
+               }
+            }
+            return resul;
+        }
+
+        // set interval and timeout
+        setInterval(myfunction, 1000);
+
+        function myfunction(){
+            var date = new Date();
+            document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" +
+            date.getSeconds();
+        }
+
+
+    </script>
+</html>
