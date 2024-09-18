@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>hi</h1>
+    
+
+<script>
+// FETCH API
+
+
+
+fetch(' https://official-joke-api.appspot.com/jokes/programming/random')
+  .then((res) => res.json()) // Parse the response as JSON
+  .then(dat => {
+    console.log(dat[0].setup); // Access the first element of the data
+  })
+  .catch(error => {
+    console.error("Error fetching data:", error);
+  });
+
+
+//post
+
+  fetch(' https://official-joke-api.appspot.com/jokes/programming/random', {
+    method: 'POST',
+    headers:{'content-type':'application/json'},
+    body:JSON.stringify({
+        user_is:33,
+        is:84,
+        tittl:'test'
+    })
+  })
+  .then((res) => res.json()) // Parse the response as JSON
+  .then(dat => {
+    console.log(dat[0].setup); // Access the first element of the data
+  })
+  .catch(error => {
+    console.error("Error fetching data:", error);
+  });
+
+
+</script>
+</body>
+</html>

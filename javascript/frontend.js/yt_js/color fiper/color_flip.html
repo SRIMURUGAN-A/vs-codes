@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color_fliper.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading">Color Flipper
+        <span id="color_container">#FFFFFF</span>
+    </div>
+    
+    <div id="wrap">
+        <div id="container">
+            <button id="btn" onclick="flip()">click me</button>
+        </div>
+    </div>
+   
+    <script>
+
+        var color_container = document.getElementById("color_container");
+        let container = document.getElementById("wrap")
+        let hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+        
+
+        function flip(){
+            let hexcolor = '#'
+            for (let i=1; i<=6; i++){
+                hexcolor += color()
+            }
+            color_container.innerHTML = hexcolor
+            container.style.backgroundColor = hexcolor;
+        }
+
+
+
+        function color() {
+            let random = Math.floor(Math.random()*16) 
+            return hex[random]
+        }
+    </script>
+</body>
+</html>
