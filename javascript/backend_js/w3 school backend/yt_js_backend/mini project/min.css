@@ -1,0 +1,43 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.butn{
+    padding: 15px;
+    background-color: rgb(194, 152, 90);
+    border-radius: 10px;
+    margin: 40px;
+    margin-left: 150px;
+}
+
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color:black ;
+   
+}
+
+/* Style the table */
+table {
+    width: 90%;
+    margin: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #333;
+    background-color: #000000;
+    color: aliceblue;
+    margin: 20px;
+}
+
+th {
+    background-color: #000000;
+}

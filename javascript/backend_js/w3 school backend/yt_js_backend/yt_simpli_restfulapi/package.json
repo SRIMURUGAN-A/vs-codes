@@ -1,0 +1,11 @@
+{
+  "name": "error_handle",
+  "version": "1.0.0",
+  "main": "index.jsC:\\Users\\Srimurugan\\vs codes\\javascript\\backend js\\w3 school backend\\yt js backend\\yt simpli restful api\\error_handling",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
